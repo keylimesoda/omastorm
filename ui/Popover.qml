@@ -66,7 +66,7 @@ FocusScope {
         delegate: Shortcut {
             required property string modelData
             sequences: card.bindings[modelData] || []
-            enabled: card.visible
+            enabled: card.visible && card.enabled
             onActivated: {
                 if (modelData === "close") {
                     if (metar.selected) metar.selected = null;
